@@ -20,11 +20,10 @@ describe('App test', () => {
     appService = fixture.debugElement.injector.get(AppService);
   });
 
-  it('should call a service', () => {
+  it('should call a service', async () => {
     spyOn(appService, 'getUsers').and.returnValue(of([{ name: 'John Doe' }]));
 
-    TestBed.tick();
-
+    await fixture.whenStable();
     fixture.detectChanges();
 
     expect(appService.getUsers).toHaveBeenCalled();
