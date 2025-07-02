@@ -1,6 +1,8 @@
 <main>
   @if(users()) {
   {{ users()[0]?.name }}
+  } @if(posts()) {
+  {{ posts()[0]?.title }}
   }
 </main>
 <router-outlet />

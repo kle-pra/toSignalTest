@@ -10,4 +10,8 @@ export class AppService {
   getUsers(): Observable<any> {
     return this.#http.get<any[]>('https://jsonplaceholder.typicode.com/users');
   }
+
+  getPosts(): Observable<any> {
+    return this.#http.get<any[]>('https://jsonplaceholder.typicode.com/posts');
+  }
 }

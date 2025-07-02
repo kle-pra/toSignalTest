@@ -20,12 +20,21 @@ describe('App test', () => {
     appService = fixture.debugElement.injector.get(AppService);
   });
 
-  it('should call a service', async () => {
+  it('should call a service through toSignal initilized as class propery', async () => {
     spyOn(appService, 'getUsers').and.returnValue(of([{ name: 'John Doe' }]));
 
-    await fixture.whenStable();
     fixture.detectChanges();
 
     expect(appService.getUsers).toHaveBeenCalled();
+  });
+
+  it('should call a service through toSignal initilized as class propery', async () => {
+    spyOn(appService, 'getPosts').and.returnValue(
+      of([{ title: 'Post Title' }])
+    );
+
+    fixture.detectChanges();
+
+    expect(appService.getPosts).toHaveBeenCalled();
   });
 });
