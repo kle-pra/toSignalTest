@@ -25,7 +25,7 @@ describe('App test', () => {
 
     fixture.detectChanges();
 
-    expect(appService.getUsers).toHaveBeenCalled();
+    expect(appService.getUsers).toHaveBeenCalled(); // not working
   });
 
   it('should call a service through toSignal initilized as class propery', async () => {
@@ -35,6 +35,6 @@ describe('App test', () => {
 
     fixture.detectChanges();
 
-    expect(appService.getPosts).toHaveBeenCalled();
+    expect(appService.getPosts).toHaveBeenCalled(); // works!
   });
 });
