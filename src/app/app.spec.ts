@@ -28,7 +28,7 @@ describe('App test', () => {
     expect(appService.getUsers).toHaveBeenCalled(); // not working
   });
 
-  it('should call a service through toSignal initilized as class propery', async () => {
+  it('should call a service through toSignal initilized inside onInit', async () => {
     spyOn(appService, 'getPosts').and.returnValue(
       of([{ title: 'Post Title' }])
     );
